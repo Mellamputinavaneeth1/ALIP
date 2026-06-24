@@ -1,0 +1,72 @@
+[
+  {
+    "full_name": "Codex Local",
+    "email": "codex_local_1781704679@example.com",
+    "password": "$2b$12$8DCaz6dcOmYG09QWc1f1VeD.bHg2t3bklIcoyjhSQfIc7KLNGegt2",
+    "role": "farmer",
+    "phone": null,
+    "location": null,
+    "created_at": "2026-06-17T13:58:02.400279",
+    "_id": "bbebf8db-d63d-4d2a-9790-ba9864f86436"
+  },
+  {
+    "full_name": "Codex Local",
+    "email": "codex_local_1781704746@example.com",
+    "password": "$2b$12$mxUkRjVBMedCbDiQtwbfUOdz8wGn2ux8GqLPylqMxVeL7.wWGIy8K",
+    "role": "farmer",
+    "phone": null,
+    "location": null,
+    "created_at": "2026-06-17T13:59:08.108494",
+    "_id": "f4198416-847e-49b2-a36c-76afde668eb0"
+  },
+  {
+    "full_name": "aa",
+    "email": "farmer@alip.com",
+    "password": "$2b$12$YnlhYdGgUQjHeL/I4wQTwuOPXOFSFli0/Skg9rXFHlXC2Mm9iwJV.",
+    "role": "farmer",
+    "phone": "11",
+    "location": "aa",
+    "created_at": "2026-06-17T14:00:16.263560",
+    "_id": "aa93f803-18a8-473b-a919-ad277eca4b01"
+  },
+  {
+    "full_name": "navaneeth",
+    "email": "navaneeth@gmail.com",
+    "password": "$2b$12$UuIvH.k4xwWAzPUI2GcI4O/mfKMbBk4sQk5zyOUt3EybuoRQPxUe6",
+    "role": "farmer",
+    "phone": "1111111111",
+    "location": "nellore",
+    "created_at": "2026-06-17T14:01:18.951104",
+    "_id": "945c8950-9039-465a-9c5a-601eb81cadd2"
+  },
+  {
+    "full_name": "a",
+    "email": "navaneeth1@gmail.com",
+    "password": "$2b$12$V/5bs10Rhb71AJCxZehEuuPnSKWGLBW53RiXEjDjgcCtJH8RBI3sK",
+    "role": "broker",
+    "phone": "1",
+    "location": "a",
+    "created_at": "2026-06-17T18:26:37.704016",
+    "_id": "d8c2c1bb-0703-439d-b877-938bc840da48"
+  },
+  {
+    "full_name": "aa",
+    "email": "a@gmail.com",
+    "password": "$2b$12$/.uql1P3nawvtuuh7sSniO7Xrw0zS60Guk8CW01kX.KJlmIYQdMGW",
+    "role": "farmer",
+    "phone": "1",
+    "location": "chittore",
+    "created_at": "2026-06-21T13:20:36.488609",
+    "_id": "8fb907e9-e51f-4276-a3c3-f518ec44dadc"
+  },
+  {
+    "full_name": "a",
+    "email": "a@a",
+    "password": "$2b$12$s93h7hEUJG.oH9f./yyVBeCvnsdqSawj9DMX.PI5BW17eTnlJ87E2",
+    "role": "farmer",
+    "phone": "1",
+    "location": "vengal",
+    "created_at": "2026-06-22T16:00:05.282546",
+    "_id": "0ec70bb4-bab2-45c9-96ab-8e2eb87121c3"
+  }
+]
