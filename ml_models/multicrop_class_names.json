@@ -1,0 +1,21 @@
+[
+  "corn_cercospora_leaf_spot",
+  "corn_common_rust",
+  "corn_healthy",
+  "corn_northern_leaf_blight",
+  "pepper_bacterial_spot",
+  "pepper_healthy",
+  "potato_early_blight",
+  "potato_healthy",
+  "potato_late_blight",
+  "tomato_bacterial_spot",
+  "tomato_early_blight",
+  "tomato_healthy",
+  "tomato_late_blight",
+  "tomato_leaf_mold",
+  "tomato_mosaic_virus",
+  "tomato_septoria_leaf_spot",
+  "tomato_spider_mites",
+  "tomato_target_spot",
+  "tomato_yellow_leaf_curl_virus"
+]
