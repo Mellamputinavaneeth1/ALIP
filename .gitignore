@@ -1,0 +1,65 @@
+# Environment and local configuration
+*.env
+backend/.env
+backend/mongodb.env.txt
+
+# Python environment and build artifacts
+venv/
+backend/venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node dependencies and build artifacts
+node_modules/
+frontend/alip-frontend/node_modules/
+frontend/alip-frontend/build/
+frontend/alip-frontend/.cache/
+frontend/alip-vite/node_modules/
+
+# Large dataset archives and raw training data
+ml_models/*.zip
+ml_models/PlantDoc-Dataset-master/
+ml_models/PlantVillage-Dataset-master/
+ml_models/plantdoc_field/
+ml_models/dataset/
+*.h5
+*.pth
+*.pt
+*.onnx
+
+# Ignore nested git metadata from embedded repositories
+backend/.git
+frontend/alip-frontend/.git
+
+# Temporary scripts and reports
+check_size.py
+size_report.txt
+push_to_github.ps1
+
+# Local editor settings
+.vscode/
+
+# Additional large dataset directories
+ml_models/multicrop_dataset/
+ml_models/multicrop_v2_dataset/
+ml_models/tomato_dataset/
+ml_models/tomato_mixed_dataset/
+
+# Temporary logs, test reports, and recovery scratch dumps
+recovered_*
+*.log
+backend/*.log
+backend/tomato_test_report.txt
+backend/gemini_raw_report.txt
+backend/pipeline_stdout.log
+backend/stdout.log
+out.txt
+frontend/alip-frontend/get_*.py
+frontend/alip-frontend/last_*.txt
+frontend/alip-frontend/previous.js
+
+# Legacy model backups
+backend/models/*.legacy
+backend/models/legacy/
