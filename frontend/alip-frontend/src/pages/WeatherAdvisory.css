@@ -1,0 +1,884 @@
+
+/* ─── Stack Spacing Helpers (Zero Collisions) ──────────────────────── */
+.wa-stack-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wa-stack-gap-sm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===================================================================
+   ALIP Farm Weather Advisory -- PC Widescreen Desktop Redesign
+   Direct translation of Screenshot 2 to PC 16:9 ratio
+   =================================================================== */
+
+.wa-page-root {
+  min-height: 100vh;
+  background: #080f1d;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  padding-bottom: 90px;
+}
+
+/* ─── 1. Living Sky Viewport ───────────────────────────────────────── */
+.wa-sky-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #091325 0%, #0e1e38 55%, #142848 85%, #193156 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+}
+
+.wa-sky-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.wa-sky-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 40px 16px;
+  pointer-events: none;
+}
+
+.wa-sky-content * {
+  pointer-events: auto;
+}
+
+.wa-sky-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.wa-loc-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wa-pin-icon {
+  width: 22px;
+  height: 22px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.wa-loc-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.wa-loc-sub {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+.wa-nav-back-btn {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wa-nav-back-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Center Hero: Big 31° & Condition */
+.wa-hero-center {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.wa-hero-temp {
+  font-size: 7rem;
+  font-weight: 200;
+  line-height: 1;
+  color: #ffffff;
+  letter-spacing: -3px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.wa-hero-cond {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 6px;
+}
+
+.wa-hero-meta {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 4px;
+}
+
+.wa-hero-bottom-spacer {
+  height: 10px;
+}
+
+/* ─── 2. Deep Navy Glass Card Styling (Screenshot 2) ────────────────── */
+.wa-content-wrapper {
+  max-width: 1280px;
+  margin: -36px auto 0;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.wa-navy-card {
+  background: rgba(14, 26, 48, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+}
+
+.wa-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wa-card-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ─── 24-Hour Hourly Slider ────────────────────────────────────────── */
+.wa-hourly-card {
+  padding: 20px 24px;
+}
+
+.wa-spray-indicator {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #34d399;
+}
+
+.wa-hourly-scroll {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 14px 0 6px;
+  scrollbar-width: none;
+}
+.wa-hourly-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.wa-hourly-item {
+  min-width: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wa-hourly-item.spray-safe {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 14px;
+  padding: 6px 10px;
+  min-width: 78px;
+}
+
+.wa-hourly-time {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.wa-hourly-glyph {
+  font-size: 1.6rem;
+  margin: 6px 0;
+}
+
+.wa-hourly-temp {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.wa-hourly-rain {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 4px;
+}
+
+.wa-hourly-item.spray-safe .wa-hourly-rain {
+  color: #34d399;
+  font-weight: 700;
+}
+
+/* ─── 3. PC 2-Column Layout ────────────────────────────────────────── */
+.wa-main-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
+  margin-top: 24px;
+  align-items: start;
+}
+
+.wa-grid-left, .wa-grid-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── Farm Readiness Card (Screenshot 2 Air Quality style) ──────────── */
+.wa-readiness-card {
+  padding: 24px;
+}
+
+.wa-readiness-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wa-readiness-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wa-leaf-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* Arc SVG Gauge */
+.wa-arc-wrap {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-arc-svg {
+  width: 74px;
+  height: 74px;
+  transform: rotate(-90deg);
+}
+
+.wa-arc-text {
+  position: absolute;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.wa-readiness-desc {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.wa-readiness-bars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wa-sub-bar-box {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.wa-sub-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 6px;
+}
+
+.wa-track {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.wa-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* ─── Multi-Day Forecast (Screenshot 2 Card 3) ─────────────────────── */
+.wa-multiday-card {
+  padding: 24px;
+}
+
+.wa-multiday-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wa-multiday-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+}
+
+.wa-multiday-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.wa-day-name {
+  font-weight: 500;
+  color: #ffffff;
+  width: 130px;
+}
+
+.wa-day-glyph {
+  font-size: 1.3rem;
+}
+
+.wa-day-rain {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  width: 60px;
+  text-align: center;
+}
+
+.wa-day-temps {
+  font-weight: 700;
+  color: #ffffff;
+  width: 75px;
+  text-align: right;
+}
+
+/* ─── 5-Day Rainfall Accumulation Card ─────────────────────────────── */
+.wa-rain-card {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 104px;
+}
+
+.wa-harvest-box {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 14px;
+  padding: 10px 14px;
+  text-align: right;
+}
+
+/* ─── Right Column: Agro Intelligence Tabs ─────────────────────────── */
+.wa-tab-bar {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wa-tab-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.wa-tab-pill {
+  background: none;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wa-tab-pill:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.wa-tab-pill.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.wa-tab-meta {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+  padding-right: 8px;
+}
+
+/* ─── Disease Risk Cards ───────────────────────────────────────────── */
+.wa-warning-banner {
+  padding: 14px 18px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wa-crops-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.wa-crop-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 4px solid #34d399;
+}
+
+.wa-crop-card.risk-high {
+  border-left-color: #ef4444;
+}
+
+.wa-crop-card.risk-medium {
+  border-left-color: #fbbf24;
+}
+
+.wa-crop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wa-risk-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.wa-risk-tag.tag-high {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.wa-risk-tag.tag-medium {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.wa-risk-tag.tag-low {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.wa-crop-action-box {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  color: #6ee7b7;
+  margin-top: 12px;
+}
+
+.wa-scan-action-btn {
+  margin-top: 14px;
+  width: 100%;
+  padding: 9px 0;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #6ee7b7;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.wa-scan-action-btn:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+/* ─── Farm Operations ──────────────────────────────────────────────── */
+.wa-spray-hero {
+  padding: 20px 24px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wa-spray-status-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 8px 14px;
+  text-align: center;
+}
+
+.wa-op-row {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wa-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.wa-status-dot.dot-safe { background: #34d399; }
+.wa-status-dot.dot-warn { background: #fbbf24; }
+.wa-status-dot.dot-unsafe { background: #f87171; }
+
+.wa-status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.wa-status-badge.badge-safe {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+.wa-status-badge.badge-warn {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+.wa-status-badge.badge-unsafe {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+/* ─── Calendar ─────────────────────────────────────────────────────── */
+.wa-cal-card {
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #34d399;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+}
+.wa-cal-card.cal-poor { border-left-color: #ef4444; }
+.wa-cal-card.cal-moderate { border-left-color: #fbbf24; }
+
+.wa-cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.wa-rating-chip {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+.wa-rating-chip.chip-optimal { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.wa-rating-chip.chip-moderate { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+.wa-rating-chip.chip-poor { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+.wa-cal-buckets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wa-bucket-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 6px;
+}
+
+.wa-bucket-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag-ok, .tag-avoid {
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.tag-ok {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.tag-avoid {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* ─── Fallback / No Location ───────────────────────────────────────── */
+.wa-no-loc-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.wa-no-loc-card {
+  max-width: 400px;
+  padding: 36px;
+  text-align: center;
+}
+
+.wa-action-btn {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 12px;
+  background: #10b981;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* ─── Responsive Media Queries ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .wa-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .wa-sky-content {
+    padding: 16px 20px;
+  }
+  .wa-hero-temp {
+    font-size: 5rem;
+  }
+  .wa-crops-grid {
+    grid-template-columns: 1fr;
+  }
+  .wa-cal-buckets {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── 4. Cross-Module Active Disease & Weather Action Plan ───────────── */
+.wa-active-infection-section {
+  margin-top: 24px;
+}
+
+.wa-active-disease-alert {
+  padding: 24px;
+  border-left: 5px solid #ef4444;
+  border-top: 1px solid rgba(239, 68, 68, 0.35);
+  border-right: 1px solid rgba(239, 68, 68, 0.2);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+  background: linear-gradient(135deg, rgba(26, 16, 26, 0.9) 0%, rgba(14, 26, 48, 0.85) 100%);
+  margin-bottom: 16px;
+}
+
+.wa-ada-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.wa-ada-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wa-ada-pulse-icon {
+  font-size: 1.8rem;
+  animation: pulseIcon 2s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+.wa-ada-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  text-transform: uppercase;
+}
+
+.wa-ada-subtitle {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 2px;
+}
+
+.wa-ada-resolve-btn {
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wa-ada-resolve-btn:hover {
+  background: rgba(16, 185, 129, 0.3);
+  color: #ffffff;
+}
+
+.wa-ada-catalyst-box {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin-top: 16px;
+}
+
+.wa-ada-catalyst-text {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.wa-ada-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.wa-ada-action-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wa-ada-action-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.wa-ada-action-tag.tag-spray { color: #34d399; }
+.wa-ada-action-tag.tag-irr   { color: #60a5fa; }
+.wa-ada-action-tag.tag-cult  { color: #fbbf24; }
+
+.wa-ada-action-desc {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.55;
+}
+
+.wa-ada-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.wa-ada-loss-saved {
+  font-size: 0.8rem;
+  color: #34d399;
+}
+
+.wa-ada-rescan-link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.wa-ada-rescan-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .wa-ada-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
