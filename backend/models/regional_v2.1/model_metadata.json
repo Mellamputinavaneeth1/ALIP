@@ -1,0 +1,279 @@
+{
+  "model_type": "LightGBM",
+  "feature_list": [
+    "temp_mean",
+    "rainfall_total",
+    "rainfall_variability",
+    "preceding_monsoon_rainfall",
+    "soil_ph",
+    "soil_oc",
+    "soil_clay",
+    "soil_cec",
+    "lagged_irrigated_share",
+    "season_kharif",
+    "crop_bajra",
+    "crop_barley",
+    "crop_chickpea",
+    "crop_cotton",
+    "crop_groundnut",
+    "crop_jowar",
+    "crop_lentil",
+    "crop_maize",
+    "crop_mungbean",
+    "crop_mustard",
+    "crop_pigeonpeas",
+    "crop_ragi",
+    "crop_rice",
+    "crop_soybean",
+    "crop_wheat"
+  ],
+  "training_period": "<= 2012",
+  "crop_list": [
+    "bajra",
+    "barley",
+    "chickpea",
+    "cotton",
+    "groundnut",
+    "jowar",
+    "lentil",
+    "maize",
+    "mungbean",
+    "mustard",
+    "pigeonpeas",
+    "ragi",
+    "rice",
+    "soybean",
+    "wheat"
+  ],
+  "validation_results": {},
+  "n_train": 87690,
+  "n_test": 9405,
+  "model_version": "v2.1-regional-hybrid",
+  "dataset_version": "v2.1-kaggle-des",
+  "feature_schema_version": "25-dim-v2.1",
+  "crop_schema_version": "15-annual-field-crops",
+  "boundary_version": "kaggle_des_district_names",
+  "climate_version": "open_meteo_centroid_10yr",
+  "soil_version": "nbss_state_fallback",
+  "irrigation_version": "des_state_level_lagged",
+  "calibration_period": "2013",
+  "test_period": "2014",
+  "target_definition": "is_major = 1 if crop_area_share >= 0.10",
+  "major_threshold": 0.1,
+  "hybrid_alpha": 0.2,
+  "alpha_selection_method": "grid_search_on_2013_validation_ndcg3",
+  "split_info": "Train <=2012, Cal=2013, Test=2014",
+  "provenance": "Kaggle Crop Production in India (DES)",
+  "hybrid_test_metrics": {
+    "recall_at_1": 0.9188034188034188,
+    "recall_at_3": 0.9316239316239316,
+    "ndcg_at_3": 0.9127937392913211,
+    "map_at_3": 0.9051519468186134,
+    "brier_score": 0.01556692062380225
+  },
+  "baseline_results": {
+    "DistrictSeasonPrior": {
+      "recall_at_1": 0.9145299145299145,
+      "recall_at_3": 0.9273504273504274,
+      "ndcg_at_3": 0.9080845126053508,
+      "map_at_3": 0.9004036087369421,
+      "brier_score": 0.015201068295314328
+    },
+    "StateSeasonPrior": {
+      "recall_at_1": 0.811965811965812,
+      "recall_at_3": 0.9017094017094017,
+      "ndcg_at_3": 0.7996323065981535,
+      "map_at_3": 0.7633547008547008,
+      "brier_score": 0.0470702250200261
+    },
+    "MajorityCrop": {
+      "recall_at_1": 0.36324786324786323,
+      "recall_at_3": 0.7585470085470085,
+      "ndcg_at_3": 0.5093460384076849,
+      "map_at_3": 0.44088319088319083,
+      "brier_score": 0.08806452634862842
+    }
+  },
+  "rolling_results": [
+    {
+      "test_year": 2013,
+      "fold_alpha": 0.3,
+      "prior_ndcg3": 0.895,
+      "ml_ndcg3": 0.7855,
+      "hybrid_ndcg3": 0.9068,
+      "hybrid_rec1": 0.8963,
+      "hybrid_rec3": 0.941
+    },
+    {
+      "test_year": 2014,
+      "fold_alpha": 0.25,
+      "prior_ndcg3": 0.9081,
+      "ml_ndcg3": 0.8008,
+      "hybrid_ndcg3": 0.9114,
+      "hybrid_rec1": 0.9167,
+      "hybrid_rec3": 0.9316
+    }
+  ],
+  "ablation_results": [
+    {
+      "config": "A_climate_only",
+      "num_features": 19,
+      "accuracy": 0.9232,
+      "auc": 0.9205,
+      "ndcg_at_3": 0.7283,
+      "recall_at_1": 0.6966,
+      "recall_at_3": 0.8761
+    },
+    {
+      "config": "B_climate_soil",
+      "num_features": 23,
+      "accuracy": 0.9296,
+      "auc": 0.9393,
+      "ndcg_at_3": 0.7655,
+      "recall_at_1": 0.7265,
+      "recall_at_3": 0.8868
+    },
+    {
+      "config": "C_climate_soil_irrigation",
+      "num_features": 24,
+      "accuracy": 0.9293,
+      "auc": 0.94,
+      "ndcg_at_3": 0.7874,
+      "recall_at_1": 0.7821,
+      "recall_at_3": 0.8889
+    },
+    {
+      "config": "D_full_no_crop",
+      "num_features": 10,
+      "accuracy": 0.8886,
+      "auc": 0.6116,
+      "ndcg_at_3": 0.4995,
+      "recall_at_1": 0.344,
+      "recall_at_3": 0.75
+    },
+    {
+      "config": "E_full",
+      "num_features": 25,
+      "accuracy": 0.9288,
+      "auc": 0.9397,
+      "ndcg_at_3": 0.7865,
+      "recall_at_1": 0.7991,
+      "recall_at_3": 0.891
+    },
+    {
+      "config": "F_crop_prior_only",
+      "num_features": 15,
+      "accuracy": 0.8886,
+      "auc": 0.7634,
+      "ndcg_at_3": 0.5093,
+      "recall_at_1": 0.3632,
+      "recall_at_3": 0.7585
+    }
+  ],
+  "spatial_validation": [
+    {
+      "state": "Andhra Pradesh",
+      "n_rows": 3900,
+      "ndcg_at_3": 0.6463,
+      "recall_at_1": 0.7385,
+      "recall_at_3": 0.8346,
+      "brier_score": 0.078
+    },
+    {
+      "state": "Bihar",
+      "n_rows": 11370,
+      "ndcg_at_3": 0.4842,
+      "recall_at_1": 0.5,
+      "recall_at_3": 0.5963,
+      "brier_score": 0.081
+    },
+    {
+      "state": "Gujarat",
+      "n_rows": 6150,
+      "ndcg_at_3": 0.6566,
+      "recall_at_1": 0.5366,
+      "recall_at_3": 0.8951,
+      "brier_score": 0.0901
+    },
+    {
+      "state": "Haryana",
+      "n_rows": 4950,
+      "ndcg_at_3": 0.9182,
+      "recall_at_1": 0.9152,
+      "recall_at_3": 1.0,
+      "brier_score": 0.0377
+    },
+    {
+      "state": "Karnataka",
+      "n_rows": 8700,
+      "ndcg_at_3": 0.2947,
+      "recall_at_1": 0.331,
+      "recall_at_3": 0.5483,
+      "brier_score": 0.1405
+    },
+    {
+      "state": "Madhya Pradesh",
+      "n_rows": 13110,
+      "ndcg_at_3": 0.5724,
+      "recall_at_1": 0.5229,
+      "recall_at_3": 0.762,
+      "brier_score": 0.0809
+    },
+    {
+      "state": "Maharashtra",
+      "n_rows": 9765,
+      "ndcg_at_3": 0.6458,
+      "recall_at_1": 0.5837,
+      "recall_at_3": 0.8879,
+      "brier_score": 0.1056
+    },
+    {
+      "state": "Punjab",
+      "n_rows": 6060,
+      "ndcg_at_3": 0.9506,
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "brier_score": 0.0169
+    },
+    {
+      "state": "Rajasthan",
+      "n_rows": 5850,
+      "ndcg_at_3": 0.6132,
+      "recall_at_1": 0.5231,
+      "recall_at_3": 0.8615,
+      "brier_score": 0.0706
+    },
+    {
+      "state": "Tamil Nadu",
+      "n_rows": 5940,
+      "ndcg_at_3": 0.6894,
+      "recall_at_1": 0.6667,
+      "recall_at_3": 0.8258,
+      "brier_score": 0.0705
+    },
+    {
+      "state": "Telangana",
+      "n_rows": 2430,
+      "ndcg_at_3": 0.5807,
+      "recall_at_1": 0.7346,
+      "recall_at_3": 0.7963,
+      "brier_score": 0.1186
+    },
+    {
+      "state": "Uttar Pradesh",
+      "n_rows": 21600,
+      "ndcg_at_3": 0.9048,
+      "recall_at_1": 0.9451,
+      "recall_at_3": 0.9618,
+      "brier_score": 0.033
+    },
+    {
+      "state": "West Bengal",
+      "n_rows": 4290,
+      "ndcg_at_3": 0.2709,
+      "recall_at_1": 0.0769,
+      "recall_at_3": 0.4545,
+      "brier_score": 0.0454
+    }
+  ]
+}

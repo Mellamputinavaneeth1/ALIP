@@ -1,0 +1,32 @@
+{
+  "alpha": 0.2,
+  "model_version": "v2.1-regional-hybrid",
+  "best_base_model": "LightGBM",
+  "test_metrics": {
+    "recall_at_1": 0.9188034188034188,
+    "recall_at_3": 0.9316239316239316,
+    "ndcg_at_3": 0.9127937392913211,
+    "map_at_3": 0.9051519468186134,
+    "brier_score": 0.01556692062380225
+  },
+  "rolling_results": [
+    {
+      "test_year": 2013,
+      "fold_alpha": 0.3,
+      "prior_ndcg3": 0.895,
+      "ml_ndcg3": 0.7855,
+      "hybrid_ndcg3": 0.9068,
+      "hybrid_rec1": 0.8963,
+      "hybrid_rec3": 0.941
+    },
+    {
+      "test_year": 2014,
+      "fold_alpha": 0.25,
+      "prior_ndcg3": 0.9081,
+      "ml_ndcg3": 0.8008,
+      "hybrid_ndcg3": 0.9114,
+      "hybrid_rec1": 0.9167,
+      "hybrid_rec3": 0.9316
+    }
+  ]
+}

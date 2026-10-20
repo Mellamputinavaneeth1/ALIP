@@ -1,0 +1,150 @@
+[
+  {
+    "full_name": "Codex Local",
+    "email": "codex_local_1781704679@example.com",
+    "password": "$2b$12$8DCaz6dcOmYG09QWc1f1VeD.bHg2t3bklIcoyjhSQfIc7KLNGegt2",
+    "role": "farmer",
+    "phone": null,
+    "location": null,
+    "created_at": "2026-06-17T13:58:02.400279",
+    "_id": "bbebf8db-d63d-4d2a-9790-ba9864f86436"
+  },
+  {
+    "full_name": "Codex Local",
+    "email": "codex_local_1781704746@example.com",
+    "password": "$2b$12$mxUkRjVBMedCbDiQtwbfUOdz8wGn2ux8GqLPylqMxVeL7.wWGIy8K",
+    "role": "farmer",
+    "phone": null,
+    "location": null,
+    "created_at": "2026-06-17T13:59:08.108494",
+    "_id": "f4198416-847e-49b2-a36c-76afde668eb0"
+  },
+  {
+    "full_name": "aa",
+    "email": "farmer@alip.com",
+    "password": "$2b$12$YnlhYdGgUQjHeL/I4wQTwuOPXOFSFli0/Skg9rXFHlXC2Mm9iwJV.",
+    "role": "farmer",
+    "phone": "11",
+    "location": "aa",
+    "created_at": "2026-06-17T14:00:16.263560",
+    "_id": "aa93f803-18a8-473b-a919-ad277eca4b01"
+  },
+  {
+    "full_name": "navaneeth",
+    "email": "navaneeth@gmail.com",
+    "password": "$2b$12$UuIvH.k4xwWAzPUI2GcI4O/mfKMbBk4sQk5zyOUt3EybuoRQPxUe6",
+    "role": "farmer",
+    "phone": "1111111111",
+    "location": "nellore",
+    "created_at": "2026-06-17T14:01:18.951104",
+    "_id": "945c8950-9039-465a-9c5a-601eb81cadd2"
+  },
+  {
+    "full_name": "a",
+    "email": "navaneeth1@gmail.com",
+    "password": "$2b$12$V/5bs10Rhb71AJCxZehEuuPnSKWGLBW53RiXEjDjgcCtJH8RBI3sK",
+    "role": "broker",
+    "phone": "1",
+    "location": "a",
+    "created_at": "2026-06-17T18:26:37.704016",
+    "_id": "d8c2c1bb-0703-439d-b877-938bc840da48"
+  },
+  {
+    "full_name": "aa",
+    "email": "a@gmail.com",
+    "password": "$2b$12$/.uql1P3nawvtuuh7sSniO7Xrw0zS60Guk8CW01kX.KJlmIYQdMGW",
+    "role": "farmer",
+    "phone": "1",
+    "location": "chittore",
+    "created_at": "2026-06-21T13:20:36.488609",
+    "_id": "8fb907e9-e51f-4276-a3c3-f518ec44dadc"
+  },
+  {
+    "full_name": "a",
+    "email": "a@a",
+    "password": "$2b$12$s93h7hEUJG.oH9f./yyVBeCvnsdqSawj9DMX.PI5BW17eTnlJ87E2",
+    "role": "farmer",
+    "phone": "1",
+    "location": "vengal",
+    "created_at": "2026-06-22T16:00:05.282546",
+    "_id": "0ec70bb4-bab2-45c9-96ab-8e2eb87121c3"
+  },
+  {
+    "full_name": "a",
+    "email": "aa@a",
+    "password": "$2b$12$06fR2rja3/wUb7WK0X21Xu7pGWwjpp4SsmRI1.wJuY/wGXzxLYm9K",
+    "role": "farmer",
+    "phone": "1",
+    "location": "chennai",
+    "created_at": "2026-07-07T04:11:07.403358",
+    "_id": "c09f834c-7919-4d3d-b0f8-5e2d373e4089"
+  },
+  {
+    "full_name": "a",
+    "email": "aaa@a",
+    "password": "$2b$12$31fagFYm7ZJvmIAx4wfkVOGP74nrkyHqA600jKFyQtK11qLquuPHO",
+    "role": "broker",
+    "phone": "1",
+    "location": "vijayawada",
+    "created_at": "2026-07-07T04:12:35.161802",
+    "_id": "c42f1b94-a9fd-4d03-845b-c21828a84790"
+  },
+  {
+    "full_name": "b",
+    "email": "b@b",
+    "password": "$2b$12$94WdLb2iGjN/zmznmwZ0BOg9P0LhuzqeySSB2KVLGEbDU1GP2Nnvm",
+    "role": "broker",
+    "phone": "1",
+    "location": "vijaywada",
+    "created_at": "2026-07-07T04:17:53.711809",
+    "storage_capacity": {
+      "cold_storage_kg": 0.0,
+      "dry_storage_kg": 0.0,
+      "open_yard_kg": 0.0,
+      "last_updated": "2026-07-07T04:17:53.711809"
+    },
+    "_id": "7e54d0a1-b3cf-4c11-ae1d-95a3d44e0a4c"
+  },
+  {
+    "full_name": "Codex Broker Test",
+    "email": "codex_broker_1783398057@example.com",
+    "password": "$2b$12$paw4IR6uc/whbRlXOgfMVu9iIuisbpnqPRGeTcu7JYrlxjmuZTFOq",
+    "role": "broker",
+    "phone": "9999999999",
+    "location": "Vengal",
+    "created_at": "2026-07-07T04:21:03.146237",
+    "storage_capacity": {
+      "cold_storage_kg": 0.0,
+      "dry_storage_kg": 0.0,
+      "open_yard_kg": 0.0,
+      "last_updated": "2026-07-07T04:21:03.146237"
+    },
+    "_id": "c12d6cf1-bc99-44be-bf4e-90af33b15763"
+  },
+  {
+    "full_name": "Codex Full App Broker",
+    "email": "codex_fullapp_broker_1783398094@example.com",
+    "password": "$2b$12$/JBrcWnJfCfMskboyut3geTmDi6WrsniCAOkvz6Dqr06/dvrPfBG6",
+    "role": "broker",
+    "phone": "9999999999",
+    "location": "Vengal",
+    "created_at": "2026-07-07T04:21:39.513055",
+    "storage_capacity": {
+      "cold_storage_kg": 0.0,
+      "dry_storage_kg": 0.0,
+      "open_yard_kg": 0.0,
+      "last_updated": "2026-07-07T04:21:39.513055"
+    },
+    "_id": "3cc8ee34-fa55-42bf-b51a-5ccf0c7c0119"
+  },
+  {
+    "full_name": "Test Broker",
+    "email": "broker@alip.com",
+    "password": "$2b$12$RgXoNe7yQN0AH5T1rExjN.Y608Hyf0lcnoq2r1pYHbqSQxC5cT9Ru",
+    "role": "broker",
+    "phone": "9876543210",
+    "location": null,
+    "created_at": "2026-08-24T17:16:12.758439",
+    "_id": "492e05eb-931d-4f9c-9eab-823e2eef1dc5"
+  }
+]
