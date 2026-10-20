@@ -1,0 +1,42 @@
+from motor.motor_asyncio import AsyncIOMotorClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+MONGODB_URL = os.getenv("MONGODB_URL")
+DATABASE_NAME = os.getenv("DATABASE_NAME")
+
+if not MONGODB_URL:
+    raise RuntimeError("MONGODB_URL is not configured")
+
+if not DATABASE_NAME:
+    raise RuntimeError("DATABASE_NAME is not configured")
+
+client = AsyncIOMotorClient(
+    MONGODB_URL,
+    serverSelectionTimeoutMS=5000,
+    connectTimeoutMS=5000,
+    socketTimeoutMS=5000,
+)
+db = client[DATABASE_NAME]
+
+
+async def ping_database():
+    await client.admin.command("ping")
+
+# Collections
+users_collection = db["users"]
+farmer_collection = db["farmer_data"]
+broker_collection = db["broker_data"]
+market_collection = db["market_data"]
+market_alerts_collection = db["market_alerts"]
+
+# New collections for Broker Demand Analysis module
+supply_history_collection = db["supply_history"]
+shipment_log_collection = db["shipment_log"]
+deal_ratings_collection = db["deal_ratings"]
+
+# Collection for Disease Scans & Weather Advisory correlation
+disease_scans_collection = db["disease_scans"]
+

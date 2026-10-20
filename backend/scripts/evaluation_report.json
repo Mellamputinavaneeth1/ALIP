@@ -1,0 +1,403 @@
+{
+  "crop_recommendation": {
+    "model": "Random Forest Classifier",
+    "dataset": "Crop_recommendation.csv (2200 samples \u00d7 7 features \u00d7 22 classes)",
+    "kfold_evaluation": {
+      "fold_5": {
+        "accuracy": {
+          "mean": 0.9954545454545455,
+          "std": 0.0024896479886598517
+        },
+        "precision_weighted": {
+          "mean": 0.9957890594254231,
+          "std": 0.002300139975789436
+        },
+        "recall_weighted": {
+          "mean": 0.9954545454545455,
+          "std": 0.0024896479886598517
+        },
+        "f1_weighted": {
+          "mean": 0.9954465731102445,
+          "std": 0.002494328365404797
+        },
+        "cohen_kappa": {
+          "mean": 0.9952380952380953,
+          "std": 0.002608202654786496
+        }
+      },
+      "fold_10": {
+        "accuracy": {
+          "mean": 0.9959090909090909,
+          "std": 0.003775738119508194
+        },
+        "precision_weighted": {
+          "mean": 0.996418732782369,
+          "std": 0.0032566364786602935
+        },
+        "recall_weighted": {
+          "mean": 0.9959090909090909,
+          "std": 0.003775738119508194
+        },
+        "f1_weighted": {
+          "mean": 0.9958850293778525,
+          "std": 0.0038035434258529444
+        },
+        "cohen_kappa": {
+          "mean": 0.9957142857142858,
+          "std": 0.003955535172818116
+        }
+      },
+      "feature_importances": {
+        "N": 0.11099316457031293,
+        "P": 0.15485372328254748,
+        "K": 0.17871632034288967,
+        "temperature": 0.07029639854991775,
+        "humidity": 0.2182444257639264,
+        "ph": 0.046572681589138076,
+        "rainfall": 0.2203232859012677
+      }
+    },
+    "noise_robustness": {
+      "0.0": {
+        "mean_accuracy": 0.9931818181818179,
+        "std_accuracy": 2.220446049250313e-16
+      },
+      "0.05": {
+        "mean_accuracy": 0.9868181818181817,
+        "std_accuracy": 0.004635472285084348
+      },
+      "0.1": {
+        "mean_accuracy": 0.9556818181818183,
+        "std_accuracy": 0.005402211056365795
+      },
+      "0.15": {
+        "mean_accuracy": 0.9111363636363636,
+        "std_accuracy": 0.012466898319911329
+      },
+      "0.2": {
+        "mean_accuracy": 0.8552272727272727,
+        "std_accuracy": 0.01654726513569764
+      },
+      "0.25": {
+        "mean_accuracy": 0.7925,
+        "std_accuracy": 0.02388094610305168
+      }
+    },
+    "status": "SUCCESS"
+  },
+  "demand_threshold": {
+    "model": "Gradient Boosting Regressor",
+    "dataset": "APMC-calibrated synthetic data",
+    "evaluation": "GradientBoostingRegressor(max_depth=4, random_state=42)",
+    "status": "SUCCESS"
+  },
+  "ablation_study": {
+    "method": "Leave-One-Out + Single-Factor + Weight Sensitivity",
+    "results": {
+      "leave_one_out": {
+        "method": "Leave-One-Out Ablation",
+        "num_destinations": 15,
+        "baseline_ranking": [
+          "('Bangalore', 7657.5)",
+          "('Ahmedabad', 6889.9)",
+          "('Vijayawada', 6678.9)",
+          "('Bhopal', 6532.9)",
+          "('Jaipur', 5775.2)",
+          "('Nagpur', 5652.1)",
+          "('Nizamabad', 5592.9)",
+          "('Warangal', 5553.3)",
+          "('Coimbatore', 5501.2)",
+          "('Pune', 5492.0)",
+          "('Karimnagar', 4977.4)",
+          "('Guntur', 4749.6)",
+          "('Indore', 4682.4)",
+          "('Lucknow', 4617.8)",
+          "('Chennai', 4282.2)"
+        ],
+        "factor_impact": {
+          "demand_gap": {
+            "kendall_tau": 0.6,
+            "ndcg_at_5": 0.9293,
+            "avg_rank_displacement": 2.0,
+            "original_weight": 0.2,
+            "interpretation": "Removing 'demand_gap' (weight=20%) changes ranking correlation to tau=0.600. HIGH impact \u2014 factor is critical."
+          },
+          "price_advantage": {
+            "kendall_tau": 0.7714,
+            "ndcg_at_5": 0.9301,
+            "avg_rank_displacement": 1.6,
+            "original_weight": 0.15,
+            "interpretation": "Removing 'price_advantage' (weight=15%) changes ranking correlation to tau=0.771. HIGH impact \u2014 factor is critical."
+          },
+          "transport": {
+            "kendall_tau": 0.7905,
+            "ndcg_at_5": 0.9301,
+            "avg_rank_displacement": 1.2,
+            "original_weight": 0.15,
+            "interpretation": "Removing 'transport' (weight=15%) changes ranking correlation to tau=0.790. HIGH impact \u2014 factor is critical."
+          },
+          "reliability": {
+            "kendall_tau": 0.7905,
+            "ndcg_at_5": 0.8777,
+            "avg_rank_displacement": 1.2,
+            "original_weight": 0.2,
+            "interpretation": "Removing 'reliability' (weight=20%) changes ranking correlation to tau=0.790. HIGH impact \u2014 factor is critical."
+          },
+          "storage": {
+            "kendall_tau": 0.7905,
+            "ndcg_at_5": 0.9556,
+            "avg_rank_displacement": 1.33,
+            "original_weight": 0.1,
+            "interpretation": "Removing 'storage' (weight=10%) changes ranking correlation to tau=0.790. HIGH impact \u2014 factor is critical."
+          },
+          "saturation": {
+            "kendall_tau": 0.8476,
+            "ndcg_at_5": 0.9873,
+            "avg_rank_displacement": 1.07,
+            "original_weight": 0.1,
+            "interpretation": "Removing 'saturation' (weight=10%) changes ranking correlation to tau=0.848. HIGH impact \u2014 factor is critical."
+          },
+          "weather": {
+            "kendall_tau": 0.8667,
+            "ndcg_at_5": 0.9623,
+            "avg_rank_displacement": 0.8,
+            "original_weight": 0.1,
+            "interpretation": "Removing 'weather' (weight=10%) changes ranking correlation to tau=0.867. MODERATE impact."
+          }
+        },
+        "most_critical_factor": "demand_gap",
+        "least_critical_factor": "weather",
+        "summary": "Most critical factor: 'demand_gap' (tau=0.600 when removed). Least critical: 'weather' (tau=0.867 when removed)."
+      },
+      "single_factor": {
+        "method": "Single-Factor Analysis",
+        "results": {
+          "demand_gap": {
+            "kendall_tau_vs_full": 0.5619,
+            "ndcg_at_5": 0.5571,
+            "interpretation": "Using only 'demand_gap' achieves tau=0.562 vs full model. Moderate predictor."
+          },
+          "price_advantage": {
+            "kendall_tau_vs_full": 0.3905,
+            "ndcg_at_5": 0.7675,
+            "interpretation": "Using only 'price_advantage' achieves tau=0.391 vs full model. Weak alone \u2014 needs other factors."
+          },
+          "transport": {
+            "kendall_tau_vs_full": 0.4476,
+            "ndcg_at_5": 0.6612,
+            "interpretation": "Using only 'transport' achieves tau=0.448 vs full model. Moderate predictor."
+          },
+          "reliability": {
+            "kendall_tau_vs_full": 0.219,
+            "ndcg_at_5": 0.7518,
+            "interpretation": "Using only 'reliability' achieves tau=0.219 vs full model. Weak alone \u2014 needs other factors."
+          },
+          "storage": {
+            "kendall_tau_vs_full": 0.3333,
+            "ndcg_at_5": 0.6478,
+            "interpretation": "Using only 'storage' achieves tau=0.333 vs full model. Weak alone \u2014 needs other factors."
+          },
+          "weather": {
+            "kendall_tau_vs_full": 0.2762,
+            "ndcg_at_5": 0.6419,
+            "interpretation": "Using only 'weather' achieves tau=0.276 vs full model. Weak alone \u2014 needs other factors."
+          },
+          "saturation": {
+            "kendall_tau_vs_full": -0.0857,
+            "ndcg_at_5": 0.2434,
+            "interpretation": "Using only 'saturation' achieves tau=-0.086 vs full model. Weak alone \u2014 needs other factors."
+          }
+        },
+        "conclusion": "No single factor achieves tau > 0.85 vs the full model, confirming that the multi-factor composite approach is necessary for accurate market routing."
+      },
+      "weight_sensitivity": {
+        "method": "Weight Sensitivity Analysis",
+        "results": {
+          "demand_gap": {
+            "perturbation_results": [
+              {
+                "perturbation": "-50%",
+                "new_weight": 0.111,
+                "kendall_tau": 0.8095
+              },
+              {
+                "perturbation": "-25%",
+                "new_weight": 0.158,
+                "kendall_tau": 0.8286
+              },
+              {
+                "perturbation": "+25%",
+                "new_weight": 0.238,
+                "kendall_tau": 0.981
+              },
+              {
+                "perturbation": "+50%",
+                "new_weight": 0.273,
+                "kendall_tau": 0.9619
+              }
+            ],
+            "avg_stability": 0.8952,
+            "sensitivity": "HIGH"
+          },
+          "price_advantage": {
+            "perturbation_results": [
+              {
+                "perturbation": "-50%",
+                "new_weight": 0.081,
+                "kendall_tau": 0.9238
+              },
+              {
+                "perturbation": "-25%",
+                "new_weight": 0.117,
+                "kendall_tau": 0.9429
+              },
+              {
+                "perturbation": "+25%",
+                "new_weight": 0.181,
+                "kendall_tau": 0.9048
+              },
+              {
+                "perturbation": "+50%",
+                "new_weight": 0.209,
+                "kendall_tau": 0.8286
+              }
+            ],
+            "avg_stability": 0.9,
+            "sensitivity": "MODERATE"
+          },
+          "transport": {
+            "perturbation_results": [
+              {
+                "perturbation": "-50%",
+                "new_weight": 0.081,
+                "kendall_tau": 0.8476
+              },
+              {
+                "perturbation": "-25%",
+                "new_weight": 0.117,
+                "kendall_tau": 0.9238
+              },
+              {
+                "perturbation": "+25%",
+                "new_weight": 0.181,
+                "kendall_tau": 0.9619
+              },
+              {
+                "perturbation": "+50%",
+                "new_weight": 0.209,
+                "kendall_tau": 0.9238
+              }
+            ],
+            "avg_stability": 0.9143,
+            "sensitivity": "MODERATE"
+          },
+          "reliability": {
+            "perturbation_results": [
+              {
+                "perturbation": "-50%",
+                "new_weight": 0.111,
+                "kendall_tau": 0.8667
+              },
+              {
+                "perturbation": "-25%",
+                "new_weight": 0.158,
+                "kendall_tau": 0.9048
+              },
+              {
+                "perturbation": "+25%",
+                "new_weight": 0.238,
+                "kendall_tau": 0.9048
+              },
+              {
+                "perturbation": "+50%",
+                "new_weight": 0.273,
+                "kendall_tau": 0.9048
+              }
+            ],
+            "avg_stability": 0.8953,
+            "sensitivity": "HIGH"
+          },
+          "storage": {
+            "perturbation_results": [
+              {
+                "perturbation": "-50%",
+                "new_weight": 0.053,
+                "kendall_tau": 0.8476
+              },
+              {
+                "perturbation": "-25%",
+                "new_weight": 0.077,
+                "kendall_tau": 0.9238
+              },
+              {
+                "perturbation": "+25%",
+                "new_weight": 0.122,
+                "kendall_tau": 0.9619
+              },
+              {
+                "perturbation": "+50%",
+                "new_weight": 0.143,
+                "kendall_tau": 0.8476
+              }
+            ],
+            "avg_stability": 0.8952,
+            "sensitivity": "HIGH"
+          },
+          "weather": {
+            "perturbation_results": [
+              {
+                "perturbation": "-50%",
+                "new_weight": 0.053,
+                "kendall_tau": 0.9238
+              },
+              {
+                "perturbation": "-25%",
+                "new_weight": 0.077,
+                "kendall_tau": 0.9619
+              },
+              {
+                "perturbation": "+25%",
+                "new_weight": 0.122,
+                "kendall_tau": 0.9429
+              },
+              {
+                "perturbation": "+50%",
+                "new_weight": 0.143,
+                "kendall_tau": 0.9238
+              }
+            ],
+            "avg_stability": 0.9381,
+            "sensitivity": "MODERATE"
+          },
+          "saturation": {
+            "perturbation_results": [
+              {
+                "perturbation": "-50%",
+                "new_weight": 0.053,
+                "kendall_tau": 0.9048
+              },
+              {
+                "perturbation": "-25%",
+                "new_weight": 0.077,
+                "kendall_tau": 0.9048
+              },
+              {
+                "perturbation": "+25%",
+                "new_weight": 0.122,
+                "kendall_tau": 0.9048
+              },
+              {
+                "perturbation": "+50%",
+                "new_weight": 0.143,
+                "kendall_tau": 0.8095
+              }
+            ],
+            "avg_stability": 0.881,
+            "sensitivity": "HIGH"
+          }
+        }
+      }
+    },
+    "status": "SUCCESS"
+  }
+}

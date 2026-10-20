@@ -1,0 +1,606 @@
+{
+    "timestamp": "2026-08-21T16:22:19.195016",
+    "crop_recommendation": {
+        "kfold": {
+            "fold_5": {
+                "accuracy": {
+                    "mean": 0.9954545454545455,
+                    "std": 0.0024896479886598517
+                },
+                "precision_weighted": {
+                    "mean": 0.9957890594254231,
+                    "std": 0.002300139975789436
+                },
+                "recall_weighted": {
+                    "mean": 0.9954545454545455,
+                    "std": 0.0024896479886598517
+                },
+                "f1_weighted": {
+                    "mean": 0.9954465731102445,
+                    "std": 0.002494328365404797
+                },
+                "cohen_kappa": {
+                    "mean": 0.9952380952380953,
+                    "std": 0.002608202654786496
+                }
+            },
+            "fold_10": {
+                "accuracy": {
+                    "mean": 0.9959090909090909,
+                    "std": 0.003775738119508194
+                },
+                "precision_weighted": {
+                    "mean": 0.996418732782369,
+                    "std": 0.0032566364786602935
+                },
+                "recall_weighted": {
+                    "mean": 0.9959090909090909,
+                    "std": 0.003775738119508194
+                },
+                "f1_weighted": {
+                    "mean": 0.9958850293778525,
+                    "std": 0.0038035434258529444
+                },
+                "cohen_kappa": {
+                    "mean": 0.9957142857142858,
+                    "std": 0.003955535172818116
+                }
+            },
+            "feature_importances": {
+                "N": 0.11099316457031293,
+                "P": 0.15485372328254748,
+                "K": 0.17871632034288967,
+                "temperature": 0.07029639854991775,
+                "humidity": 0.2182444257639264,
+                "ph": 0.046572681589138076,
+                "rainfall": 0.2203232859012677
+            }
+        },
+        "noise_robustness": {
+            "0.0": {
+                "mean_accuracy": 0.9931818181818179,
+                "std_accuracy": 2.220446049250313e-16
+            },
+            "0.05": {
+                "mean_accuracy": 0.9802272727272727,
+                "std_accuracy": 0.004551132816931996
+            },
+            "0.1": {
+                "mean_accuracy": 0.9554545454545454,
+                "std_accuracy": 0.006523954588366957
+            },
+            "0.15": {
+                "mean_accuracy": 0.9143181818181819,
+                "std_accuracy": 0.016547265135697615
+            },
+            "0.2": {
+                "mean_accuracy": 0.8570454545454546,
+                "std_accuracy": 0.009002410145608356
+            },
+            "0.25": {
+                "mean_accuracy": 0.8031818181818181,
+                "std_accuracy": 0.013259956496195286
+            }
+        },
+        "baseline_comparison": {
+            "models": {
+                "RandomForest": {
+                    "accuracy_mean": 0.9954545454545455,
+                    "accuracy_std": 0.0024896479886598517,
+                    "f1_mean": 0.9954465731102445,
+                    "f1_std": 0.002494328365404797,
+                    "fold_scores": [
+                        0.9954545454545455,
+                        0.9931818181818182,
+                        1.0,
+                        0.9954545454545455,
+                        0.9931818181818182
+                    ]
+                },
+                "SVM": {
+                    "accuracy_mean": 0.9781818181818182,
+                    "accuracy_std": 0.003692744729379966,
+                    "f1_mean": 0.9779930585585225,
+                    "f1_std": 0.0037381156295118304,
+                    "fold_scores": [
+                        0.9795454545454545,
+                        0.9818181818181818,
+                        0.975,
+                        0.9727272727272728,
+                        0.9818181818181818
+                    ]
+                },
+                "LogisticRegression": {
+                    "accuracy_mean": 0.9736363636363636,
+                    "accuracy_std": 0.001818181818181802,
+                    "f1_mean": 0.9736446387515141,
+                    "f1_std": 0.0016885535874182715,
+                    "fold_scores": [
+                        0.975,
+                        0.975,
+                        0.975,
+                        0.9727272727272728,
+                        0.9704545454545455
+                    ]
+                },
+                "KNN": {
+                    "accuracy_mean": 0.9809090909090908,
+                    "accuracy_std": 0.006523954588366978,
+                    "f1_mean": 0.9809671521909609,
+                    "f1_std": 0.006414638534928898,
+                    "fold_scores": [
+                        0.9840909090909091,
+                        0.9818181818181818,
+                        0.975,
+                        0.9727272727272728,
+                        0.990909090909091
+                    ]
+                }
+            },
+            "statistical_tests": {
+                "RF_vs_SVM": {
+                    "t_statistic": 6.084869844593311,
+                    "p_value": 0.0036874999999999985,
+                    "significant": true
+                },
+                "RF_vs_LogisticRegression": {
+                    "t_statistic": 18.82714897326571,
+                    "p_value": 4.686932553162875e-05,
+                    "significant": true
+                },
+                "RF_vs_KNN": {
+                    "t_statistic": 3.491486243775864,
+                    "p_value": 0.02508900133262788,
+                    "significant": true
+                }
+            }
+        },
+        "shap_analysis": {
+            "mean_abs_shap": {
+                "N": 0.025376053849944725,
+                "P": 0.024873640087730093,
+                "K": 0.02595993158482717,
+                "temperature": 0.009385715896683825,
+                "humidity": 0.03297562867093292,
+                "ph": 0.004424471687877127,
+                "rainfall": 0.02581172890862213
+            },
+            "feature_ranking": [
+                [
+                    "humidity",
+                    0.03297562867093292
+                ],
+                [
+                    "K",
+                    0.02595993158482717
+                ],
+                [
+                    "rainfall",
+                    0.02581172890862213
+                ],
+                [
+                    "N",
+                    0.025376053849944725
+                ],
+                [
+                    "P",
+                    0.024873640087730093
+                ],
+                [
+                    "temperature",
+                    0.009385715896683825
+                ],
+                [
+                    "ph",
+                    0.004424471687877127
+                ]
+            ],
+            "agronomic_validation": "Top features (humidity, K, rainfall) align with known agronomic factors for crop selection"
+        }
+    },
+    "demand_threshold": {
+        "model_evaluation": {
+            "kfold_r2_mean": 0.8746395346896781,
+            "kfold_r2_std": 0.07884386734423168,
+            "kfold_mae_mean": 44.989186252333326,
+            "kfold_rmse_mean": 71.36118572196554,
+            "kfold_mape_mean": 17.50578792842016,
+            "loo_r2": 0.8424237888531547,
+            "loo_mae": 46.37030239593821,
+            "loo_rmse": 84.29436510517685,
+            "loo_mape": 16.81220202409289,
+            "feature_importances": {
+                "MarketSize": 0.2877642307253761,
+                "PopulationDensity": 0.272147335815774,
+                "RegionType": 0.15347297903109233,
+                "Crop": 0.14131068286082876,
+                "Month": 0.10073843313584863,
+                "Season": 0.044566338431080176
+            },
+            "sample_count": 198
+        },
+        "baselines": {
+            "GBR": {
+                "r2_mean": 0.8746395346896781,
+                "r2_std": 0.07884386734423168,
+                "mae_mean": 44.989186252333326,
+                "mae_std": 9.971891367937898,
+                "p_value_vs_gbr": null
+            },
+            "Linear Regression": {
+                "r2_mean": 0.5945904234430547,
+                "r2_std": 0.0450699401814767,
+                "mae_mean": 79.62850952693053,
+                "mae_std": 8.420976243260224,
+                "p_value_vs_gbr": 0.00630309065987935
+            },
+            "Decision Tree": {
+                "r2_mean": 0.6299092561898425,
+                "r2_std": 0.1574596765392243,
+                "mae_mean": 78.23353724111229,
+                "mae_std": 11.974993594378303,
+                "p_value_vs_gbr": 0.010098531053338671
+            },
+            "SVR (RBF)": {
+                "r2_mean": 0.06242156892462862,
+                "r2_std": 0.03857462415874464,
+                "mae_mean": 151.5907426321205,
+                "mae_std": 6.637194633328397,
+                "p_value_vs_gbr": 3.4194611146868914e-06
+            }
+        }
+    },
+    "ablation_study": {
+        "full": {
+            "leave_one_out": {
+                "method": "Leave-One-Out Ablation",
+                "num_destinations": 15,
+                "baseline_ranking": [
+                    [
+                        "Bangalore",
+                        7657.5
+                    ],
+                    [
+                        "Ahmedabad",
+                        6889.9
+                    ],
+                    [
+                        "Vijayawada",
+                        6678.9
+                    ],
+                    [
+                        "Bhopal",
+                        6532.9
+                    ],
+                    [
+                        "Jaipur",
+                        5775.2
+                    ],
+                    [
+                        "Nagpur",
+                        5652.1
+                    ],
+                    [
+                        "Nizamabad",
+                        5592.9
+                    ],
+                    [
+                        "Warangal",
+                        5553.3
+                    ],
+                    [
+                        "Coimbatore",
+                        5501.2
+                    ],
+                    [
+                        "Pune",
+                        5492.0
+                    ],
+                    [
+                        "Karimnagar",
+                        4977.4
+                    ],
+                    [
+                        "Guntur",
+                        4749.6
+                    ],
+                    [
+                        "Indore",
+                        4682.4
+                    ],
+                    [
+                        "Lucknow",
+                        4617.8
+                    ],
+                    [
+                        "Chennai",
+                        4282.2
+                    ]
+                ],
+                "factor_impact": {
+                    "demand_gap": {
+                        "kendall_tau": 0.6,
+                        "ndcg_at_5": 0.9293,
+                        "avg_rank_displacement": 2.0,
+                        "original_weight": 0.2,
+                        "interpretation": "Removing 'demand_gap' (weight=20%) changes ranking correlation to tau=0.600. HIGH impact \u2014 factor is critical."
+                    },
+                    "price_advantage": {
+                        "kendall_tau": 0.7714,
+                        "ndcg_at_5": 0.9301,
+                        "avg_rank_displacement": 1.6,
+                        "original_weight": 0.15,
+                        "interpretation": "Removing 'price_advantage' (weight=15%) changes ranking correlation to tau=0.771. HIGH impact \u2014 factor is critical."
+                    },
+                    "transport": {
+                        "kendall_tau": 0.7905,
+                        "ndcg_at_5": 0.9301,
+                        "avg_rank_displacement": 1.2,
+                        "original_weight": 0.15,
+                        "interpretation": "Removing 'transport' (weight=15%) changes ranking correlation to tau=0.790. HIGH impact \u2014 factor is critical."
+                    },
+                    "reliability": {
+                        "kendall_tau": 0.7905,
+                        "ndcg_at_5": 0.8777,
+                        "avg_rank_displacement": 1.2,
+                        "original_weight": 0.2,
+                        "interpretation": "Removing 'reliability' (weight=20%) changes ranking correlation to tau=0.790. HIGH impact \u2014 factor is critical."
+                    },
+                    "storage": {
+                        "kendall_tau": 0.7905,
+                        "ndcg_at_5": 0.9556,
+                        "avg_rank_displacement": 1.33,
+                        "original_weight": 0.1,
+                        "interpretation": "Removing 'storage' (weight=10%) changes ranking correlation to tau=0.790. HIGH impact \u2014 factor is critical."
+                    },
+                    "saturation": {
+                        "kendall_tau": 0.8476,
+                        "ndcg_at_5": 0.9873,
+                        "avg_rank_displacement": 1.07,
+                        "original_weight": 0.1,
+                        "interpretation": "Removing 'saturation' (weight=10%) changes ranking correlation to tau=0.848. HIGH impact \u2014 factor is critical."
+                    },
+                    "weather": {
+                        "kendall_tau": 0.8667,
+                        "ndcg_at_5": 0.9623,
+                        "avg_rank_displacement": 0.8,
+                        "original_weight": 0.1,
+                        "interpretation": "Removing 'weather' (weight=10%) changes ranking correlation to tau=0.867. MODERATE impact."
+                    }
+                },
+                "most_critical_factor": "demand_gap",
+                "least_critical_factor": "weather",
+                "summary": "Most critical factor: 'demand_gap' (tau=0.600 when removed). Least critical: 'weather' (tau=0.867 when removed)."
+            },
+            "single_factor": {
+                "method": "Single-Factor Analysis",
+                "results": {
+                    "demand_gap": {
+                        "kendall_tau_vs_full": 0.5619,
+                        "ndcg_at_5": 0.5571,
+                        "interpretation": "Using only 'demand_gap' achieves tau=0.562 vs full model. Moderate predictor."
+                    },
+                    "price_advantage": {
+                        "kendall_tau_vs_full": 0.3905,
+                        "ndcg_at_5": 0.7675,
+                        "interpretation": "Using only 'price_advantage' achieves tau=0.391 vs full model. Weak alone \u2014 needs other factors."
+                    },
+                    "transport": {
+                        "kendall_tau_vs_full": 0.4476,
+                        "ndcg_at_5": 0.6612,
+                        "interpretation": "Using only 'transport' achieves tau=0.448 vs full model. Moderate predictor."
+                    },
+                    "reliability": {
+                        "kendall_tau_vs_full": 0.219,
+                        "ndcg_at_5": 0.7518,
+                        "interpretation": "Using only 'reliability' achieves tau=0.219 vs full model. Weak alone \u2014 needs other factors."
+                    },
+                    "storage": {
+                        "kendall_tau_vs_full": 0.3333,
+                        "ndcg_at_5": 0.6478,
+                        "interpretation": "Using only 'storage' achieves tau=0.333 vs full model. Weak alone \u2014 needs other factors."
+                    },
+                    "weather": {
+                        "kendall_tau_vs_full": 0.2762,
+                        "ndcg_at_5": 0.6419,
+                        "interpretation": "Using only 'weather' achieves tau=0.276 vs full model. Weak alone \u2014 needs other factors."
+                    },
+                    "saturation": {
+                        "kendall_tau_vs_full": -0.0857,
+                        "ndcg_at_5": 0.2434,
+                        "interpretation": "Using only 'saturation' achieves tau=-0.086 vs full model. Weak alone \u2014 needs other factors."
+                    }
+                },
+                "conclusion": "No single factor achieves tau > 0.85 vs the full model, confirming that the multi-factor composite approach is necessary for accurate market routing."
+            },
+            "weight_sensitivity": {
+                "method": "Weight Sensitivity Analysis",
+                "results": {
+                    "demand_gap": {
+                        "perturbation_results": [
+                            {
+                                "perturbation": "-50%",
+                                "new_weight": 0.111,
+                                "kendall_tau": 0.8095
+                            },
+                            {
+                                "perturbation": "-25%",
+                                "new_weight": 0.158,
+                                "kendall_tau": 0.8286
+                            },
+                            {
+                                "perturbation": "+25%",
+                                "new_weight": 0.238,
+                                "kendall_tau": 0.981
+                            },
+                            {
+                                "perturbation": "+50%",
+                                "new_weight": 0.273,
+                                "kendall_tau": 0.9619
+                            }
+                        ],
+                        "avg_stability": 0.8952,
+                        "sensitivity": "HIGH"
+                    },
+                    "price_advantage": {
+                        "perturbation_results": [
+                            {
+                                "perturbation": "-50%",
+                                "new_weight": 0.081,
+                                "kendall_tau": 0.9238
+                            },
+                            {
+                                "perturbation": "-25%",
+                                "new_weight": 0.117,
+                                "kendall_tau": 0.9429
+                            },
+                            {
+                                "perturbation": "+25%",
+                                "new_weight": 0.181,
+                                "kendall_tau": 0.9048
+                            },
+                            {
+                                "perturbation": "+50%",
+                                "new_weight": 0.209,
+                                "kendall_tau": 0.8286
+                            }
+                        ],
+                        "avg_stability": 0.9,
+                        "sensitivity": "MODERATE"
+                    },
+                    "transport": {
+                        "perturbation_results": [
+                            {
+                                "perturbation": "-50%",
+                                "new_weight": 0.081,
+                                "kendall_tau": 0.8476
+                            },
+                            {
+                                "perturbation": "-25%",
+                                "new_weight": 0.117,
+                                "kendall_tau": 0.9238
+                            },
+                            {
+                                "perturbation": "+25%",
+                                "new_weight": 0.181,
+                                "kendall_tau": 0.9619
+                            },
+                            {
+                                "perturbation": "+50%",
+                                "new_weight": 0.209,
+                                "kendall_tau": 0.9238
+                            }
+                        ],
+                        "avg_stability": 0.9143,
+                        "sensitivity": "MODERATE"
+                    },
+                    "reliability": {
+                        "perturbation_results": [
+                            {
+                                "perturbation": "-50%",
+                                "new_weight": 0.111,
+                                "kendall_tau": 0.8667
+                            },
+                            {
+                                "perturbation": "-25%",
+                                "new_weight": 0.158,
+                                "kendall_tau": 0.9048
+                            },
+                            {
+                                "perturbation": "+25%",
+                                "new_weight": 0.238,
+                                "kendall_tau": 0.9048
+                            },
+                            {
+                                "perturbation": "+50%",
+                                "new_weight": 0.273,
+                                "kendall_tau": 0.9048
+                            }
+                        ],
+                        "avg_stability": 0.8953,
+                        "sensitivity": "HIGH"
+                    },
+                    "storage": {
+                        "perturbation_results": [
+                            {
+                                "perturbation": "-50%",
+                                "new_weight": 0.053,
+                                "kendall_tau": 0.8476
+                            },
+                            {
+                                "perturbation": "-25%",
+                                "new_weight": 0.077,
+                                "kendall_tau": 0.9238
+                            },
+                            {
+                                "perturbation": "+25%",
+                                "new_weight": 0.122,
+                                "kendall_tau": 0.9619
+                            },
+                            {
+                                "perturbation": "+50%",
+                                "new_weight": 0.143,
+                                "kendall_tau": 0.8476
+                            }
+                        ],
+                        "avg_stability": 0.8952,
+                        "sensitivity": "HIGH"
+                    },
+                    "weather": {
+                        "perturbation_results": [
+                            {
+                                "perturbation": "-50%",
+                                "new_weight": 0.053,
+                                "kendall_tau": 0.9238
+                            },
+                            {
+                                "perturbation": "-25%",
+                                "new_weight": 0.077,
+                                "kendall_tau": 0.9619
+                            },
+                            {
+                                "perturbation": "+25%",
+                                "new_weight": 0.122,
+                                "kendall_tau": 0.9429
+                            },
+                            {
+                                "perturbation": "+50%",
+                                "new_weight": 0.143,
+                                "kendall_tau": 0.9238
+                            }
+                        ],
+                        "avg_stability": 0.9381,
+                        "sensitivity": "MODERATE"
+                    },
+                    "saturation": {
+                        "perturbation_results": [
+                            {
+                                "perturbation": "-50%",
+                                "new_weight": 0.053,
+                                "kendall_tau": 0.9048
+                            },
+                            {
+                                "perturbation": "-25%",
+                                "new_weight": 0.077,
+                                "kendall_tau": 0.9048
+                            },
+                            {
+                                "perturbation": "+25%",
+                                "new_weight": 0.122,
+                                "kendall_tau": 0.9048
+                            },
+                            {
+                                "perturbation": "+50%",
+                                "new_weight": 0.143,
+                                "kendall_tau": 0.8095
+                            }
+                        ],
+                        "avg_stability": 0.881,
+                        "sensitivity": "HIGH"
+                    }
+                }
+            }
+        }
+    },
+    "publication_summary": "============================================================\n                   PUBLICATION SUMMARY                      \n============================================================\n\n1. COMPARATIVE ANALYSIS\n-----------------------\nCrop Recommendation Models: RF vs SVM vs LR vs KNN\nDemand Models: GBR vs LinReg vs DT vs SVR\nSee JSON report for detailed metrics (accuracy, precision, recall, f1, rmse, mae, r2).\n\n2. STATISTICAL SIGNIFICANCE\n---------------------------\nBaseline comparison for Crop Models includes t-test p-values.\nReview 'baseline_comparison' in report for significance levels.\n\n3. ROBUSTNESS ANALYSIS\n----------------------\nNoise degradation curves simulated across different noise levels.\nDetails in 'noise_robustness' section.\n\n4. ABLATION STUDY FINDINGS\n--------------------------\nKey findings on feature importance and module contribution.\nDetails in 'ablation_study' section.\n\n5. FEATURE IMPORTANCE\n---------------------\nSHAP-based ranking and explanations.\nDetails in 'shap_analysis' section.\n============================================================"
+}
